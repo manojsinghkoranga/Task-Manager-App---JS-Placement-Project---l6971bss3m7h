@@ -154,9 +154,21 @@ function renderData(){
         option4.setAttribute('value', 'completed');
         option4.innerHTML = 'Completed';
         selectStatus.appendChild(option1);
+        if(obj.Status === 'open'){
+            selectStatus.value = 'open';
+        }
         selectStatus.appendChild(option2);
+        if(obj.Status === 'in-progress'){
+            selectStatus.value = 'in-progress';
+        }
         selectStatus.appendChild(option3);
+        if(obj.Status === 'review'){
+            selectStatus.value = 'review';
+        }
         selectStatus.appendChild(option4);
+        if(obj.Status === 'completed'){
+            selectStatus.value = 'completed';
+        }
         selectStatus.disabled = 'true';
 
         statusComponent.appendChild(statuslabel);
@@ -260,4 +272,6 @@ function drop(event){
     let id = Number(data.charAt(4));
     tasks[id - 1].Status = event.target.id;
     setTasksArray();
+    clearInnerHtml();
+    renderData();
 }
