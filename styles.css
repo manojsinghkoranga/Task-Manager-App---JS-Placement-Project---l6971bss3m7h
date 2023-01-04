@@ -1,1 +1,61 @@
+p{
+    margin: 2px;
+}
+.ht{
+    min-height: 500px;
+}
+.add-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+    background: #222;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#task-discription{
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 200px);
+    background: rgb(242, 225, 248);
+    width: 400px;
+    height: 550px;
+    z-index: 2;
+    text-align: start;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border:2px solid black;
+}
+.tasks{
+    position: absolute; 
+    top: 50px;
+    left: calc(50% - 150px);
+    background: rgb(242, 225, 248);
+    width: 400px;
+    height: auto;
+    z-index: 2;
+    text-align: start;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border:2px solid black;
+}
+.active{
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.createdTasks{
+    font-weight: 600;
+    font-size: medium;
+    background-color: rgb(216, 185, 247);
+    border-radius: 10px;
+    box-shadow: 3px 3px rgb(181, 177, 177);
+}
 
