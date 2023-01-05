@@ -24,7 +24,7 @@ const setTasksArray = () => {
     localStorage.setItem(localStorageKey, array);
 }
 
-let count = tasks.length + 1;
+let count = tasks.length >= 1 ? tasks[tasks.length - 1].Id + 1 : 1;
 
 addTaskButton.addEventListener('click', toggleTaskBar);
 closeTaskDiscriptionButton.addEventListener('click', toggleTaskBar);
@@ -176,7 +176,6 @@ function renderData(){
 
         innnerDiv.appendChild(statusComponent);
 
-
         let component2 = document.createElement('div');
         component2.classList.add('mb-3');
 
@@ -215,7 +214,6 @@ function renderData(){
 
         innnerDiv.appendChild(component3);
 
-
         let component4 = document.createElement('div');
         component4.classList.add('mb-3');
         let labelcomp4 = document.createElement('label');
@@ -241,6 +239,14 @@ function renderData(){
         component5.setAttribute('onclick', `renderTasksData(${obj.Id})`)
 
         innnerDiv.appendChild(component5);
+        
+        let deleteButton = document.createElement('button');
+        deleteButton.setAttribute('type', 'button');
+        deleteButton.classList.add('btn', 'btn-danger');
+        deleteButton.innerText = 'Delete Task';
+        deleteButton.setAttribute('onclick', `deleteTask(${obj.Id})`);
+
+        innnerDiv.appendChild(deleteButton);
 
         outerDiv.appendChild(innnerDiv);
 
@@ -251,6 +257,15 @@ function renderData(){
 }
 
 renderData();
+
+function deleteTask(id){
+    tasks = tasks.filter((obj) => {
+        return obj.Id != id;
+    })
+    setTasksArray();
+    clearInnerHtml();
+    renderData();
+}
 
 function renderTasksData(id){
     document.getElementById(id).classList.toggle('active');
