@@ -267,9 +267,12 @@ function drag(event) {
 function drop(event){
     event.preventDefault();
     var data = event.dataTransfer.getData('text');
-    event.target.appendChild(document.getElementById(data));
-
     let id = Number(data.charAt(4));
+    if(tasks[id - 1].Status === 'completed'){
+        return;
+    };
+    event.target.appendChild(document.getElementById(data));
+    
     tasks[id - 1].Status = event.target.id;
     setTasksArray();
     clearInnerHtml();

@@ -58,4 +58,6 @@ p{
     border-radius: 10px;
     box-shadow: 3px 3px rgb(181, 177, 177);
 }
-
+p{
+    text-align: left;
+}
