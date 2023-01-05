@@ -268,6 +268,9 @@ function drop(event){
     event.preventDefault();
     var data = event.dataTransfer.getData('text');
     let id = Number(data.charAt(4));
+    if(event.target.id === 'open'){
+        return;
+    }
     if(tasks[id - 1].Status === 'completed'){
         return;
     };
