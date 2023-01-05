@@ -1,6 +1,9 @@
 p{
     margin: 2px;
 }
+body{
+    background-color: rgb(129, 174, 246);
+}
 .ht{
     min-height: 500px;
 }
@@ -65,4 +68,17 @@ p{
 .btn-danger{
     width: 150px;
     margin-left: 100px;
+}
+
+#completedSection{
+    background-color: rgb(209, 248, 225);
+}
+#reviewSection{
+    background-color: rgb(249, 245, 221);
+}
+#in-progressSection{
+    background-color: rgb(218, 208, 246);
+}
+#openSection{
+    background-color: rgb(182, 241, 247);
 }
